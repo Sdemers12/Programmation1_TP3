@@ -1,0 +1,31 @@
+<%- include("partials/header") -%>
+
+<main>
+    <div class="container">
+
+        <h2 class="text-center">Register</h2>
+
+        <%- include("partials/messages") -%>
+
+        <div class="col-4 mx-auto text-center">
+
+            <form action="/signup/create" method="post" class="p-2 m-2">
+
+                <input class="form-control m-2" type="text" id="name" name="name" placeholder="Name"
+                    aria-label="default input example" required="required">
+                <input class="form-control m-2" type="text" id="email" name="email" placeholder="Email Address"
+                    aria-label="default input example" required="required">
+                <input class="form-control m-2" type="password" id="password" name="password" placeholder="password"
+                    aria-label="default input example" required="required">
+                <button class="btn btn-primary m-2 d-flex w-100 justify-content-center" type="submit">Signup</button>
+            </form>
+            <div>
+                Back to <a href="/login" class="fw-bold">Login</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+
+</html>

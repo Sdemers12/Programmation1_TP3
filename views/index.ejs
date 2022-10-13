@@ -1,0 +1,41 @@
+<%- include("partials/header") -%>
+
+<main>
+
+    <div class="container">
+
+        <%- include("partials/messages") -%>
+
+        <table class="table table-bordered" id="datatable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% products.forEach((product)=> { %>
+                <tr>
+                    <td><%= product.code %></td>
+                    <td><%= product.description %></td>
+                    <td>$ <%= product.prix %></td>
+                    <td>
+                        <form style="display: inline;" action="/delete/<%=product.id%>?_method=DELETE" method="POST">
+                            <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                        </form>
+                        <form style="display: inline;" action="/edit/<%=product.id%>" method="GET">
+                            <button style="cursor: pointer;" type="submit" class="btn btn-success ml-2">Edit</button>
+                        </form>
+                    </td>
+                </tr>
+
+                <% }) %>
+
+            </tbody>
+        </table>
+    </div>
+
+</main>

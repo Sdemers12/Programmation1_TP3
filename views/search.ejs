@@ -1,0 +1,48 @@
+<%- include("partials/header") -%>
+
+<main>
+    <div class="container">
+        <div class="col-4 mx-auto text-center">
+            <%- include("partials/messages") -%>
+
+            <h2>Search</h2>
+
+            <form action="/product/search/find" method="get" class="p-2 m-2">
+
+                <input class="form-control m-2" type="text" id="search" name="search" placeholder="Search Query"
+                    aria-label="default input example">
+                <button class="btn btn-primary m-2 d-flex w-100 justify-content-center" type="submit">Search</button>
+
+            </form>
+        </div>
+            <% if (product) { %>
+
+            <h2 class="text-center">Search Results</h2>
+        
+            <table class="table table-bordered" id="datatable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Description</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% product.forEach((product)=> { %>
+                    <tr>
+                        <td><%= product.code %></td>
+                        <td><%= product.description %></td>
+                        <td>$ <%= product.prix %></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            <% } %>
+
+        </div>
+    </div>
+</main>
+
+</body>
+
+</html>

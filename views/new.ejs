@@ -1,0 +1,24 @@
+<%- include("partials/header") -%>
+
+<main>
+    <div class="container">
+        <div class="col-4 mx-auto text-center">
+            <h2>Add New Product</h2>
+
+            <form action="/product/new" method="post" class="p-2 m-2">
+
+                <input class="form-control m-2" type="text" id="code" name="code" placeholder="Code"
+                    aria-label="default input example" required="required">
+                <input class="form-control m-2" type="text" id="description" name="description"
+                    placeholder="Description" aria-label="default input example" required="required">
+                <input class="form-control m-2" type="number" id="prix" name="prix" placeholder="Price"
+                    aria-label="default input example" required="required">
+                <button class="btn btn-primary m-2 d-flex w-100 justify-content-center" type="submit">Add to DataBase</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+</body>
+
+</html>
